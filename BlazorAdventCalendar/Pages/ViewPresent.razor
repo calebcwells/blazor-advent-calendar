@@ -1,16 +1,24 @@
-﻿@page "/present"
+﻿@page "/present/{id:int}"
 
-<h1>Counter</h1>
+@inject IPresentRepository presentRepository;
 
-<p>Current count: @currentCount</p>
+<h1>@present.Name</h1>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<h2>Blazor Resource: <NavLink href="@present.Url">@present.Url</NavLink></h2>
 
 @code {
-    private int currentCount = 0;
+    private Present present;
+    private Resource resource;
 
-    private void IncrementCount()
+    [Parameter]
+    public int id { get; set; }
+
+    protected override void OnParametersSet()
     {
-        currentCount++;
+        if (id > 25)
+            id = 25;
+
+        present = presentRepository.GetPresent(id);
+        present.Url = presentRepository.GetResource();
     }
 }

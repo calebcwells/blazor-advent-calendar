@@ -1,8 +1,5 @@
 ﻿using BlazorAdventCalendar.Data;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BlazorAdventCalendar.Services
 {
@@ -10,5 +7,6 @@ namespace BlazorAdventCalendar.Services
     {
         Present GetPresent(int id);
         IEnumerable<Present> GetPresents();
+        string GetResource();
     }
 }

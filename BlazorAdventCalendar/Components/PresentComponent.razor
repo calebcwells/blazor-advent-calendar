@@ -1,0 +1,6 @@
+﻿<li><NavLink href="@($"/present/{present.Id}")">@present.Id</NavLink></li>
+
+@code {
+    [Parameter]
+    public Present present { get; set; }
+}

@@ -41,16 +41,16 @@ namespace BlazorAdventCalendar.Services
 
             resources = new List<Resource>
             {
-                new Resource { Url="https://dotnet.microsuntilt.com/learn/aspnet/blazor-tutorial/intro" },
-                new Resource { Url="https://jsakamoto.github.io/awesome-blazor-browser/" },
-                new Resource { Url="https://lupblazordemos.z13.web.core.windows.net/" },
-                new Resource { Url="https://github.com/aspnet/samples/tree/master/samples/aspnetcore/blazor/FlightFinder" },
-                new Resource { Url="https://github.com/dotnet-presentations/blazor-workshop/" },
-                new Resource { Url="https://blazorboilerplate.com/" },
-                new Resource { Url="https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-5.0" },
-                new Resource { Url="https://mudblazor.com/" },
-                new Resource { Url="https://en.wikipedia.org/wiki/Blazor" },
-                new Resource { Url="https://blazor.radzen.com/" }
+                new Resource { Id = 1, Url = "https://dotnet.microsuntilt.com/learn/aspnet/blazor-tutorial/intro" },
+                new Resource { Id = 2, Url = "https://jsakamoto.github.io/awesome-blazor-browser/" },
+                new Resource { Id = 3, Url = "https://lupblazordemos.z13.web.core.windows.net/" },
+                new Resource { Id = 4, Url = "https://github.com/aspnet/samples/tree/master/samples/aspnetcore/blazor/FlightFinder" },
+                new Resource { Id = 5, Url = "https://github.com/dotnet-presentations/blazor-workshop/" },
+                new Resource { Id = 6, Url = "https://blazorboilerplate.com/" },
+                new Resource { Id = 7, Url = "https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-5.0" },
+                new Resource { Id = 8, Url = "https://mudblazor.com/" },
+                new Resource { Id = 9, Url = "https://en.wikipedia.org/wiki/Blazor" },
+                new Resource { Id = 10, Url = "https://blazor.radzen.com/" }
             };
         }
 
@@ -64,9 +64,12 @@ namespace BlazorAdventCalendar.Services
             return presents.Where(p => p.Date <= DateTime.Today);
         }
 
-        public IEnumerable<Resource> GetResources()
+        public string GetResource()
         {
-            return resources;
+            var randomizer = new Random();
+            var randomNumber = randomizer.Next(1, 10);
+
+            return resources.Where(r => r.Id == randomNumber).Select(r => r.Url).FirstOrDefault();
         }
     }
 }

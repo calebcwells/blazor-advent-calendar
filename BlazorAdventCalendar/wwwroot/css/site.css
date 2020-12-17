@@ -154,7 +154,7 @@ app {
     .presents li:before {
         content: "";
         display: inline-block;
-        height: 110%;
+        height: 100%;
         vertical-align: middle;
     }
 
@@ -162,14 +162,21 @@ app {
         position: relative;
         float: left;
         background: url(../present.png) top center no-repeat;
-        color: #FFF;
-        font-size: 25px;
+        font-size: 40px;
         font-weight: bold;
         text-align: center;
-        height: 8%;
-        width: 8%;
+        height: 15%;
+        width: 15%;
         margin: 1%;
         cursor: pointer;
+    }
+
+    .presents li a {
+        color: #FFF;
+    }
+
+    .presents li a:hover {
+        text-decoration: none;
     }
 
 
