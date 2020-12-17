@@ -4,14 +4,14 @@
 
 <h1>Today is @DateTime.Today.ToLongDateString()</h1>
 
-<SurveyPrompt Title="Not the title you were looking for?" />
-
-<ul>
-    @foreach (var present in presents)
-    {
-        <li>@present.Name on @present.Date</li>
-    }
-</ul>
+<div class="presents">
+    <ul>
+        @foreach (var present in presents)
+        {
+            <li>@present.Id</li>
+        }
+    </ul>
+</div>
 
 @code {
     private IEnumerable<Present> presents;

@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Watch Remove="Data\Resource.cs" />
     <Watch Remove="Pages\ViewPresent.razor" />
     <Watch Remove="Services\IPresentRepository.cs" />
     <Watch Remove="Services\PresentRepository.cs" />
