@@ -1,7 +1,23 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+@inject IPresentRepository presentRepository
 
-Welcome to your new app.
+<h1>Today is @DateTime.Today.ToLongDateString()</h1>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<SurveyPrompt Title="Not the title you were looking for?" />
+
+<ul>
+    @foreach (var present in presents)
+    {
+        <li>@present.Name on @present.Date</li>
+    }
+</ul>
+
+@code {
+    private IEnumerable<Present> presents;
+
+    protected override void OnInitialized()
+    {
+        presents = presentRepository.GetPresents();
+    }
+}

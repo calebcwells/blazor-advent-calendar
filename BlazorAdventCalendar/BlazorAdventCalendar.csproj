@@ -1,7 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Watch Include="..\**\*.razor" />
+    <Watch Include="..\**\*.scss" />
+    <Watch Include="..\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Watch Remove="Pages\ViewPresent.razor" />
+    <Watch Remove="Services\IPresentRepository.cs" />
+    <Watch Remove="Services\PresentRepository.cs" />
+  </ItemGroup>  
 </Project>
