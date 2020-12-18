@@ -2,9 +2,7 @@
 
 @inject IPresentRepository presentRepository;
 
-<h1>@present.Name</h1>
-
-<h2>Blazor Resource: <NavLink href="@present.Url">@present.Url</NavLink></h2>
+<PresentComponent present="present"></PresentComponent>
 
 @code {
     private Present present;

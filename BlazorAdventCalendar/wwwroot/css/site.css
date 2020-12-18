@@ -41,10 +41,10 @@ app {
             margin-left: 1.5rem;
         }
 
-.main .top-row a:first-child {
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        .main .top-row a:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
 .sidebar {
     background-image: linear-gradient(180deg, red 15%, #fff 90%);
@@ -129,12 +129,12 @@ app {
     z-index: 1000;
 }
 
-#blazor-error-ui .dismiss {
-    cursor: pointer;
-    position: absolute;
-    right: 0.75rem;
-    top: 0.5rem;
-}
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
 
 .presents {
     position: fixed;
@@ -168,16 +168,16 @@ app {
         height: 15%;
         width: 15%;
         margin: 1%;
-        cursor: pointer;
     }
 
-    .presents li a {
-        color: #FFF;
-    }
+        .presents li a {
+            color: #FFF;
+            cursor: pointer;
+        }
 
-    .presents li a:hover {
-        text-decoration: none;
-    }
+            .presents li a:hover {
+                text-decoration: none;
+            }
 
 
 @media (max-width: 767.98px) {

@@ -1,4 +1,6 @@
-﻿<li><NavLink href="@($"/present/{present.Id}")">@present.Id</NavLink></li>
+﻿<h1>@present.Name</h1>
+
+<h2>Blazor Resource: <NavLink href="@present.Url" target="_blank">@present.Url</NavLink></h2>
 
 @code {
     [Parameter]
